@@ -8,16 +8,13 @@ cache:
     - vendor
 
 os: linux
-arch:
-  - arm64
-  - ppc64le
-  - s390x
+arch: arm64
 
 env:
   global:
     - COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
 
-matrix:
+jobs:
   include:
     - php: 7.4
       env:
