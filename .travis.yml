@@ -12,6 +12,8 @@ env:
     - COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
 
 matrix:
+  allow_failures:
+    - env: ALLOW_FAIL=true
   include:
     - php: 7.4
       env:
@@ -36,10 +38,6 @@ matrix:
       env:
         - DEPS=lowest
         - ALLOW_FAIL=true
-
-jobs:
-  allow_failures:
-    - env: ALLOW_FAIL=true
 
 before_install:
   - if [[ $TEST_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini || return 0 ; fi
