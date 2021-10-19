@@ -7,6 +7,9 @@ cache:
     - $HOME/.composer/cache
     - vendor
 
+arch:
+  - arm64
+
 env:
   global:
     - COMPOSER_ARGS="--no-interaction --ignore-platform-reqs"
